@@ -5,8 +5,6 @@ WORKDIR /passbase-challenge
 COPY Gemfile /passbase-challenge/Gemfile
 COPY Gemfile.lock /passbase-challenge/Gemfile.lock
 RUN bundle install 
-
-COPY ../compose /passbase-challenge
 EXPOSE 3000
 
 CMD ["rails", "server", "-b", "0.0.0.0"]

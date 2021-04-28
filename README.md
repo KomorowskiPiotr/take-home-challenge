@@ -1,24 +1,6 @@
-# README
+# Passbase-challenge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## commands
+use docker to run this app: docker-compose up
+run tests: docker-compose run -e "RAILS_ENV=test" web bundle exec rspec
+run rubocop: docker-compose run -e "RAILS_ENV=development" web bundle exec rubocop
