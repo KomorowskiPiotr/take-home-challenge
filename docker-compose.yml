@@ -2,9 +2,10 @@ version: '3.9'
 services:
   db:
     image: postgres
-    restart: always
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
     environment:
       POSTGRES_PASSWORD: password
   redis:
@@ -13,18 +14,17 @@ services:
       - "6380:6379"
   web:
     build: .
-    command: bash -c "bundle exec rake db:migrate && rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/take-home-challenge
     ports:
-      - "5000:5000"
+      - "3000:3000"
     depends_on:
       - db
       - redis
-    links: 
-      - db:db
-      - redis:redis  
-    volumes:
-       - .:/passbase-challenge
     environment:
-        - REDIS_HOST=redis
-        - REDIS_PORT=6379
-        - FIXER_API_KEY=66e62c5ddc5e0af450df3ed2248e09bd
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - FIXER_API_KEY=66e62c5ddc5e0af450df3ed2248e09bd
+    tty: true
+    stdin_open: true
