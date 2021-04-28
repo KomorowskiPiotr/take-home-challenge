@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ProjectEntity < BaseEntity
+class CurrencyRateEntity < BaseEntity
   expose :base_currency
   expose :rates
 end
