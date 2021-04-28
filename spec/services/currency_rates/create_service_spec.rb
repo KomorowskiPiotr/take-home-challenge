@@ -29,6 +29,12 @@ RSpec.describe CurrencyRates::CreateService do
 
         it { expect { create_project }.to raise_error(ActiveRecord::NotNullViolation) }
       end
+
+      context 'without exchanger' do
+        let(:convert_currency) { nil }
+
+        it { expect { create_project }.to raise_error(ActiveRecord::NotNullViolation) }
+      end
     end
   end
 end

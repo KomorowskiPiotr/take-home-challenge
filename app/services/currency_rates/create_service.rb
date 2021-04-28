@@ -7,7 +7,8 @@ module CurrencyRates
 
       CurrencyRate.create!(
         base_currency: base_currency,
-        rates: { "#{convert_currency}": fixer['rates'][convert_currency] },
+        exchanger: convert_currency,
+        rate: fixer.dig('rates', convert_currency),
         project_id: project_id
       )
     end

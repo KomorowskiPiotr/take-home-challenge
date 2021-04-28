@@ -2,8 +2,9 @@
 
 FactoryBot.define do
   factory :currency_rate do
-    base_currency { 'USD' }
-    rates { { EUR: 1.21 } }
+    base_currency { 'EUR' }
+    exchanger { 'USD' }
+    rate { 1.21 }
     association :project
   end
 end
