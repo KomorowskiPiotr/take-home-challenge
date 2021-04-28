@@ -2,6 +2,11 @@
 
 module Api
   class Base < Grape::API
-    mount Api::V1::Base
+    helpers do
+      def invalid_api_key
+        status 401
+        present(:error, 'Invalid API KEY.')
+      end
+    end
   end
 end

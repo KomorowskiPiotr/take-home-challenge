@@ -3,7 +3,7 @@
 module Api
   module V1
     module Projects
-      class Create < Grape::API
+      class Create < Api::Base
         post do
           ::Projects::CreateService.new.call
         end

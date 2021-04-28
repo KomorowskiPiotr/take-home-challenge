@@ -3,7 +3,7 @@
 module Api
   module V1
     module Projects
-      class Get < Grape::API
+      class Get < Api::Base
         get do
           params do
             requires :id, type: Integer
