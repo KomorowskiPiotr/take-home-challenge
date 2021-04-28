@@ -13,7 +13,7 @@ services:
       - "6380:6379"
   web:
     build: .
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    command: bash -c "bundle exec rake db:migrate && rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     ports:
       - "5000:5000"
     depends_on:
@@ -27,3 +27,4 @@ services:
     environment:
         - REDIS_HOST=redis
         - REDIS_PORT=6379
+        - FIXER_API_KEY=66e62c5ddc5e0af450df3ed2248e09bd

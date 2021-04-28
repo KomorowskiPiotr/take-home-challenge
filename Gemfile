@@ -29,6 +29,8 @@ gem 'grape', '~> 1.3'
 gem 'grape-entity'
 gem 'grape_on_rails_routes'
 
+gem 'faraday'
+
 # Docs
 gem 'grape-swagger'
 gem 'grape-swagger-entity'
