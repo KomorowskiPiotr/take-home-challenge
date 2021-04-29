@@ -7,6 +7,7 @@ module Api
       format :json
 
       mount Api::V1::Projects::Root
+      mount Api::V1::CurrencyRates::Root
 
       add_swagger_documentation info: { title: 'challenge-app' }, doc_version: '0.0.1'
     end

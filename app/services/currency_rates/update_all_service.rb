@@ -15,7 +15,7 @@ module CurrencyRates
     private
 
     def fixer
-      Fixer::HttpRequest.new.call
+      @fixer ||= Fixer::HttpRequest.new.call
     end
   end
 end
