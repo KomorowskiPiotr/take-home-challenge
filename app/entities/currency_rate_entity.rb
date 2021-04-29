@@ -2,5 +2,6 @@
 
 class CurrencyRateEntity < BaseEntity
   expose :base_currency
-  expose :rates
+  expose :exchanger
+  expose :rate
 end

@@ -5,6 +5,5 @@ FactoryBot.define do
     base_currency { 'EUR' }
     exchanger { 'USD' }
     rate { 1.21 }
-    association :project
   end
 end

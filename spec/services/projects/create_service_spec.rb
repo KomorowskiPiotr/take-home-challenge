@@ -9,9 +9,5 @@ RSpec.describe Projects::CreateService do
     it 'creates new project' do
       expect { create_project }.to change { Project.all.size }.by 1
     end
-
-    it 'creates new currency_rate' do
-      expect { create_project }.to change { CurrencyRate.all.size }.by 1
-    end
   end
 end

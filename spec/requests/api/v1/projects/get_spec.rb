@@ -15,7 +15,7 @@ RSpec.describe Api::V1::Projects::Get, type: :request do
       let(:params) { { api_key: project.api_key } }
 
       it 'returns project' do
-        expect(JSON.parse(get_project.body).keys.sort).to eq(%w[api_key currency_rates name].sort)
+        expect(JSON.parse(get_project.body).keys.sort).to eq(%w[api_key name].sort)
       end
 
       it { expect(get_project).to have_http_status(:success) }

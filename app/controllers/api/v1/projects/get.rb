@@ -10,7 +10,7 @@ module Api
             requires :api_key, type: String
           end
 
-          project = Project.includes(:currency_rates).find_by(api_key: params['api_key'])
+          project = Project.find_by(api_key: params['api_key'])
           return invalid_api_key unless project
 
           present(project, with: ::ProjectEntity)
