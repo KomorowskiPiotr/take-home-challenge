@@ -9,4 +9,3 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 CurrencyRates::CreateService.new.call(base_currency: 'EUR', convert_currency: 'USD')
-CurrencyRates::CreateService.new.call(base_currency: 'USD', convert_currency: 'EUR')

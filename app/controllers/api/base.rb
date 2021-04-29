@@ -7,6 +7,11 @@ module Api
         status 401
         present(:error, 'Invalid API KEY.')
       end
+
+      def not_found
+        status 404
+        present(:error, 'Entity not found.')
+      end
     end
   end
 end
